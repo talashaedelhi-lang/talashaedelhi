@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talash-ae Dilli</title>
 
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f9f9f9;
+}
+
+header {
+  background:#111;
+  color:#fff;
+  padding:15px;
+  text-align:center;
+  position:sticky;
+  top:0;
+}
+
+nav a {
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.hero {
+  background:url('https://images.unsplash.com/photo-1587474260584-136574528ed5') center/cover;
+  height:400px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:35px;
+  font-weight:bold;
+  text-align:center;
+}
+
+section {
+  padding:30px;
+}
+
+h2 {
+  text-align:center;
+}
+
+.btn {
+  background:#ff5722;
+  color:white;
+  padding:12px 20px;
+  border:none;
+  cursor:pointer;
+  border-radius:5px;
+}
+
+form {
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  max-width:500px;
+  margin:auto;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input {
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+}
+
+footer {
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:15px;
+}
+
+.social img {
+  width:35px;
+  margin:10px;
+}
+
+.fixed-book {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+}
+
+.gallery img {
+  width:100%;
+  max-width:300px;
+  margin:10px;
+  border-radius:10px;
+}
+
+.gallery {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Talash-ae Dilli</h1>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#gallery">Gallery</a>
+<a href="#booking">Book</a>
+</nav>
+</header>
+
+<div class="hero" id="home">
+Explore Delhi Like Never Before
+</div>
+
+<section id="about">
+<h2>About Our Heritage Walk</h2>
+<p>
+Talash-ae Dilli is a unique heritage walk experience designed to help people explore the hidden beauty, culture, and history of Delhi in a simple and engaging way. Our walks are carefully planned to take you through some of the most iconic and lesser-known places in the city. From ancient monuments to lively streets, every step tells a story.
+
+Our team of 50+ experienced guides shares interesting facts, local stories, and cultural insights that you won’t find in books. We focus on making the experience easy, fun, and memorable for everyone.
+
+Each walk lasts around 2 hours and includes historical exploration, storytelling, photography spots, and sometimes local food experiences. Whether you are a tourist or a local resident, our walks give you a fresh view of Delhi.
+
+We aim to connect people with the real soul of the city. Instead of just visiting places, you will understand their meaning, history, and importance.
+
+Join Talash-ae Dilli and discover Delhi in a way you have never seen before.
+</p>
+</section>
+
+<section id="gallery">
+<h2>Delhi Monuments</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1587474260584-136574528ed5">
+<img src="https://images.unsplash.com/photo-1564507592333-c60657eea523">
+<img src="https://images.unsplash.com/photo-1599661046289-e31897846e41">
+</div>
+</section>
+
+<section id="booking">
+<h2>Book Your Walk</h2>
+
+<form id="bookingForm">
+<input type="text" name="name" placeholder="Name" required>
+<input type="number" name="age" placeholder="Age" required>
+<input type="text" name="nationality" placeholder="Nationality" required>
+<input type="number" name="people" placeholder="Number of People" required>
+<input type="date" name="date" required>
+
+<button class="btn" type="submit">Submit Booking</button>
+</form>
+
+</section>
+
+<div class="fixed-book">
+<a href="#booking"><button class="btn">Book Now</button></a>
+</div>
+
+<section>
+<h2>Contact Us</h2>
+<p><b>Owner:</b> Prince</p>
+<p><b>Phone:</b> 7027125674</p>
+<p><b>Email:</b> talashaedelhi@gmail.com</p>
+
+<div class="social">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+</div>
+</section>
+
+<footer>
+<p>© 2026 Talash-ae Dilli | All Rights Reserved</p>
+</footer>
+
+<script>
+const scriptURL = 'PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE';
+const form = document.getElementById('bookingForm');
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert('Booking Submitted Successfully!'))
+  .catch(error => alert('Error! Try again'));
+});
+</script>
+
+</body>
+</html>
